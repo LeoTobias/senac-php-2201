@@ -3,7 +3,7 @@
 function cadastraAluno(array $aluno):bool //A variável $aluno só existe e funciona dentro da função cadastraAluno; Escopo de Função
 {
 
-    $f = fopen('alunos.csv','a');
+    $f = fopen('dados.csv','a');
     $escreveu = fwrite( $f, "{$aluno['matricula']};\"{$aluno['nome']}\"\n");
     fclose($f);
 
@@ -15,10 +15,16 @@ function cadastraAluno(array $aluno):bool //A variável $aluno só existe e func
 
 }
 
-$funcionou = cadastraAluno(['matricula' => 140620, 'nome' => 'Leonardo']);
+function listarAlunos():array
+{
+    $alunos = [];
 
-if($funcionou){
-    echo "<br>Aluno cadastrado com sucesso!";
-}else{
-    echo "<br>Erro ao cadastrar o aluno!";
+    $f = fopen('dados.csv','r');
+
+    while($linha = fgets($f)){
+        var_dump($linha);
+        echo "<br>";
+    }
+
+    return $alunos;
 }

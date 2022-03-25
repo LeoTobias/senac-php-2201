@@ -13,7 +13,7 @@ $pdo = new PDO ($dsn, $dbuser, $dbpass);
 $inseriu = $pdo->exec(' INSERT INTO 
                     tarefas (descricao)
                 VALUES  
-                    ("INSERIDO VIA PHP")');
+                    ("MAIS UMA TAREFA INSERIDA VIA PHP")');
 
 //FIM INSERT
 
@@ -29,7 +29,7 @@ if($inseriu){
 $apagou = $pdo->exec(' DELETE FROM 
                     tarefas 
                 WHERE 
-                    id = 17');
+                    id = 18');
 
 //FIM DELETE
 

@@ -1,8 +1,12 @@
 <?php
 require 'conexao.php';
+require 'controleDeAcesso.php';
 
 $tarefa = $_POST['tarefa']; //Dado inseguro
-$arquivo = 
+if($_FILES['figura']['error'] == 0 && $_FILES['figura']['size'] > 0){
+
+    move_uploaded_file($_FILES['figura']['tmp_name'], "imagens/{$_FILES['figura']['name']}");
+}
 
 $stmt = $bd->prepare('INSERT INTO tarefas (descricao) VALUES (:tarefa)'); // preparando a consulta
 

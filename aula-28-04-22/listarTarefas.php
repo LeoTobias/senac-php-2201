@@ -12,7 +12,8 @@
 require 'controleDeAcesso.php';
 require 'conexao.php';
 
-$consulta = $bd->query("SELECT id, descricao FROM tarefas")->fetchAll();
+
+$consulta = $bd->query("SELECT id, descricao, imagem FROM tarefas WHERE apagado = 0")->fetchAll();
 
 ?>
 
@@ -35,24 +36,33 @@ $consulta = $bd->query("SELECT id, descricao FROM tarefas")->fetchAll();
         background-color: #4254c8;
     }
 </style>
-<a href="editarTarefa.php">+ Nova Tarefa</a><br>
+<a href="formTarefa.php">+ Nova Tarefa</a><br>
 <form method="post">
     <table class="table">
     <tr>
         <th>ID</th>
         <th>Descrição</th>
+        <th>Imagem</th>
         <th>&nbsp;</th>
         <th>&nbsp;</th>
     </tr>
-        <?php foreach($consulta as $linha):?>
+        <?php foreach($consulta as $linha):
+                $img = 'N/D';
+                if(!empty($linha['imagem'])){
+                    if(is_file($linha['imagem'])){
+                        $img = "<img src='{$linha['imagem']} width='250' height='250'>";
+                    }
+                }
+            ?>
                 <tr>
                     <td><?php echo $linha['id']; ?></td>
                     <td><?php echo $linha['descricao']; ?></td>
+                    <td><?php echo $img ?></td>
                     <td><button name="id" formaction="apagarTarefa.php" value = "<?php echo $linha['id'] ?>">Exluir</button></td>
                     <td><button name="id" formaction="editarTarefa.php" value = "<?php echo $linha['id']; ?>">Editar</button></td>
                 </tr>
         <?php endforeach;?>
     </table>
 </form>
-<a href="#">Voltar</a>
+<a href="index.php">Voltar</a>
 

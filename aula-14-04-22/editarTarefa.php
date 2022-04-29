@@ -1,4 +1,5 @@
 <?php
+require 'controleDeAcesso.php';
 require_once 'conexao.php';
 
 $id = preg_replace('/\D/', '', $_POST['id']); //Usando expressão regular para tratar o dado evitando SQL Injection;
@@ -27,4 +28,4 @@ echo "  <form method='post'>
                 value=';{$tarefa['descricao']}'><br>
             <input type='hidden' name='id' value='$id'><br>
             <input type='submit' value='Atualizar'>
-        </form> <a href='select.php'>Voltar</a>";
+        </form> <a href='listarTarefas.php'>Voltar</a>";

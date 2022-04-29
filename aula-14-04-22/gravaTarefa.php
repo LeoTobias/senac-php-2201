@@ -1,6 +1,6 @@
 <?php
-require 'conexao.php';
 require 'controleDeAcesso.php';
+require 'conexao.php';
 
 $tarefa = $_POST['tarefa']; //Dado inseguro
 if($_FILES['figura']['error'] == 0 && $_FILES['figura']['size'] > 0){

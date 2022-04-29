@@ -1,6 +1,7 @@
 <?php
 require 'controleDeAcesso.php';
-require 'conexao.php';
+require 'conexao.php'; 
+
 
 $consulta = $bd->query("SELECT id, nome FROM usuarios")->fetchAll();
 

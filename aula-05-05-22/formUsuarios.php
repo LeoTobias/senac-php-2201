@@ -1,3 +1,6 @@
+<?php 
+require 'controleDeAcesso.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,7 @@
         </form>
     </div>
     <div>
-        <a href="">Listar</a>
+        <a href="listarUsuarios.php">Listar</a>
     </div>
 </body>
 </html>

@@ -12,4 +12,4 @@ if($bd->exec("DELETE FROM tarefas WHERE id = $id")){
     echo "Erro ao tentar apagar a tarefa" ;
 }
 
-echo "<br><br><a href='listarTarefa.php'>Voltar</a>";
+echo "<br><br><a href='listarTarefas.php'>Voltar</a>";

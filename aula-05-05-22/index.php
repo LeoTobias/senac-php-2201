@@ -1,5 +1,5 @@
-<?php
-require('controleDeAcesso.php');
+<?php 
+require 'controleDeAcesso.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,8 @@ require('controleDeAcesso.php');
         Menu
         <ul>
             <li><a href="listarUsuarios.php">Usuários</a></li>
-            <li><a href="select.php">Tarefa</a></li>
+            <li><a href="listarTarefas.php">Tarefa</a></li>
+            <li><a href="lixeira.php">Lixeira</a></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </div>

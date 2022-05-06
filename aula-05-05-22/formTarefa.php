@@ -1,3 +1,7 @@
+<?php
+require('controleDeAcesso.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +11,15 @@
     <title>Tarefas</title>
 </head>
 <body>
-    <form action="insert.php" method="post">
+    <form action="gravaTarefa.php" method="post" enctype="multipart/form-data">
         <label>Adicionar uma nova tarefa:</label><br>
         <input type="text" name="tarefa" placeholder="Digite uma nova tarefa">
-        <input type="submit" value="Enviar"><br>
+        <br><br>
+        <input type="file" name="figura">
+        <br><br>
+        <input type="submit" value="Enviar">
+        <br>
     </form>
+    <a href="index.php">Menu</a>
 </body>
 </html>

@@ -1,8 +1,0 @@
-<?php
-// Conecta no banco de dados
-$dsn = "mysql:dbname=aula_php;host=localhost";
-$dbuser = 'root';
-$dbpass = '';
-
-$bd = new PDO ($dsn, $dbuser, $dbpass);
-//FIM Conecta no Banco de Dados

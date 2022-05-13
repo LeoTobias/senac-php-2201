@@ -21,3 +21,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){ // Se o requisitante usar o método GE
 }
 // Retorna código de erro  método não permitido
 http_response_code(405);
+
